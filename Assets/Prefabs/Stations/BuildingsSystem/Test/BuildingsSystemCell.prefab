@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6778012765945675716}
   - component: {fileID: -2467746228768089473}
   - component: {fileID: -9218173469049394774}
+  - component: {fileID: 8550030789826860001}
+  - component: {fileID: 6365306029028198277}
   m_Layer: 0
   m_Name: BuildingsSystemCell
   m_TagString: Untagged
@@ -100,6 +102,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellSpriteRenderer: {fileID: 4083573714930874687}
+  OnBuildingSet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6365306029028198277}
+        m_TargetAssemblyTypeName: BuildingToStationPresetAdapter, Assembly-CSharp
+        m_MethodName: Adapt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &-2467746228768089473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -172,3 +189,46 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8550030789826860001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608502648471056012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba93bdefefbdffa43b3ba12353fcd78e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Station: {fileID: 0}
+  OnWorkDone:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6365306029028198277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608502648471056012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c908dd015c748ac94d50a0106c919d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAdapt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8550030789826860001}
+        m_TargetAssemblyTypeName: WorkStation, Assembly-CSharp
+        m_MethodName: SetUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
