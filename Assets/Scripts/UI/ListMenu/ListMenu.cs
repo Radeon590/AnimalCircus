@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 public class ListMenu : MonoBehaviour
 {
     [SerializeField] private UiList uiList;
-    public IEnumerable<IUiListElementData> ElementsData;
+    public List<IUiListElementData> ElementsData;
     public UnityEvent<IUiListElementData> OnSelect;
 
     public void Open()

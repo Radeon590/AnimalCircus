@@ -7,11 +7,13 @@ using UnityEngine.Serialization;
 public class GameMachine : MonoBehaviour
 {
     [SerializeField] private SingletonObjectPresets singletonObjectPresets;
+    [SerializeField] private LaborExchangeFacade laborExchangeFacade;
     [SerializeField] private ListMenu stationsListMenu;
     
     void Start()
     {
         singletonObjectPresets.SetUp();
-        stationsListMenu.ElementsData = SingletonObjectPresets.Stations.Select(s => (IUiListElementData)s);
+        laborExchangeFacade.SetUp(SingletonObjectPresets.Employees);
+        stationsListMenu.ElementsData = SingletonObjectPresets.Stations.Select(s => (IUiListElementData)s).ToList();
     }
 }

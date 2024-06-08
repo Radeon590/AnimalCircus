@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UiListElementDataToStationAdapter : UiListElementDataAdapter<Station>
+public class UiListElementToEmployeeAdapter : UiListElementDataAdapter<Employee>
 {
-    
 }

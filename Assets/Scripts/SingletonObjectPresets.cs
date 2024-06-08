@@ -8,8 +8,13 @@ public class SingletonObjectPresets : MonoBehaviour
 
     public static List<Station> Stations { get; private set; }
 
+    [SerializeField] private List<Employee> employees;
+    
+    public static List<Employee> Employees { get; private set; }
+
     public void SetUp()
     {
         Stations = stations;
+        Employees = employees;
     }
 }
