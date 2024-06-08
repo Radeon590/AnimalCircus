@@ -20,10 +20,12 @@ public class LaborExchangeFacade : MonoBehaviour
     {
         EmployeePreset newEmployee = employeeFlyweightFactory.GetEmployee();
         EmployeeGeneratedPreset newEmployeeGenerated = employeeGenerator.Generate(newEmployee);
+        Debug.Log(newEmployeeGenerated.Sprite);
+        Debug.Log(JsonUtility.ToJson(newEmployeeGenerated));
         employeeListMenu.ElementsData.Add(newEmployeeGenerated);
     }
 
-    public void SpawnEmployee(EmployeePreset employeePreset)
+    public void SpawnEmployee(EmployeeGeneratedPreset employeePreset)
     {
         employeeSpawner.Spawn(employeePreset);
     }

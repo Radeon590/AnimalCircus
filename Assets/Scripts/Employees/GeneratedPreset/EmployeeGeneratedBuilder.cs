@@ -6,7 +6,7 @@ public class EmployeeGeneratedBuilder : MonoBehaviour
 
     public void Create()
     {
-        _result = ScriptableObject.CreateInstance<EmployeeGeneratedPreset>();
+        _result = new EmployeeGeneratedPreset();
     }
 
     public void SetEmployeePreset(EmployeePreset employeePreset)

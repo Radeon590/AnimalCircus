@@ -7,5 +7,8 @@ using UnityEngine;
 public class EmployeePreset : ScriptableObject
 {
     [SerializeField] protected Sprite sprite;
+    public Sprite Sprite => sprite;
+    
     [SerializeField] protected string employeeName;
+    public string EmployeeName => employeeName;
 }
