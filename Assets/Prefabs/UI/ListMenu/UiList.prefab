@@ -529,7 +529,7 @@ GameObject:
   - component: {fileID: 8801429317385917068}
   - component: {fileID: -8904031175111446970}
   m_Layer: 5
-  m_Name: StationsList
+  m_Name: UiList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

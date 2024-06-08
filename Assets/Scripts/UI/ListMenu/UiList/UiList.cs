@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class StationsList : MonoBehaviour
+public class UiList : MonoBehaviour
 {
     [SerializeField] private GameObject stationListElementPrefab;
     [SerializeField] private Transform elementsContainer;
@@ -11,9 +12,9 @@ public class StationsList : MonoBehaviour
 
     public int Count => elementsContainer.childCount;
     
-    public void Append(Station station, StationsMenu stationsMenu)
+    public void Append(IUiListElementData data, UnityEvent<IUiListElementData> onSelect)
     {
-        Instantiate(stationListElementPrefab).GetComponent<StationsListElement>().SetUp(station, stationsMenu, this);
+        Instantiate(stationListElementPrefab).GetComponent<UiListElement>().SetUp(this, data, onSelect);
     }
 
     public void Clean()
