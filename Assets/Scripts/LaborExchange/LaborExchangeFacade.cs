@@ -5,10 +5,11 @@ using UnityEngine;
 public class LaborExchangeFacade : MonoBehaviour
 {
     [SerializeField] private EmployeeFlyweightFactory employeeFlyweightFactory;
+    [SerializeField] private EmployeeGenerator employeeGenerator;
     [SerializeField] private ListMenu employeeListMenu;
-    [SerializeField] private GameObject employeePrefab;
+    [SerializeField] private EmployeeSpawner employeeSpawner;
     
-    public void SetUp(List<Employee> employeePresets)
+    public void SetUp(List<EmployeePreset> employeePresets)
     {
         employeeListMenu.ElementsData = new List<IUiListElementData>();
         employeeFlyweightFactory.SetUp(employeePresets);
@@ -17,14 +18,13 @@ public class LaborExchangeFacade : MonoBehaviour
 
     public void UpdateLaborExchange()
     {
-        var newEmployee = employeeFlyweightFactory.GetEmployee();
-        Debug.Log(employeeFlyweightFactory);
-        Debug.Log(newEmployee);
-        newEmployee.AppendToListMenu(employeeListMenu);
+        EmployeePreset newEmployee = employeeFlyweightFactory.GetEmployee();
+        EmployeeGeneratedPreset newEmployeeGenerated = employeeGenerator.Generate(newEmployee);
+        employeeListMenu.ElementsData.Add(newEmployeeGenerated);
     }
 
-    public void SpawnEmployee(Employee employee)
+    public void SpawnEmployee(EmployeePreset employeePreset)
     {
-        //employee.Spawn();
+        employeeSpawner.Spawn(employeePreset);
     }
 }

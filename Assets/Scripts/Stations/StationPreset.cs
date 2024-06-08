@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Station", menuName = "ObjectPresets/SpawnStation", order = 1)]
-public class Station : ScriptableObject, IBuilding, IUiListElementData
+[CreateAssetMenu(fileName = "StationPreset", menuName = "ObjectPresets/SpawnStation", order = 1)]
+public class StationPreset : ScriptableObject, IBuilding, IUiListElementData
 {
     [SerializeField] private string stationName;
     public string StationName => stationName;

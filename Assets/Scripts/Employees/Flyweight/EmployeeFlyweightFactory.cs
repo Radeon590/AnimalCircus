@@ -1,17 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class EmployeeFlyweightFactory : MonoBehaviour
 {
-    private List<Employee> _employees;
+    private List<EmployeePreset> _employees;
 
-    public void SetUp(List<Employee> employees)
+    public void SetUp(List<EmployeePreset> employees)
     {
         _employees = employees;
     }
     
-    public Employee GetEmployee()
+    public EmployeePreset GetEmployee()
     {
         Debug.Log(_employees.Count);
         return _employees[Random.Range(0, _employees.Count)];

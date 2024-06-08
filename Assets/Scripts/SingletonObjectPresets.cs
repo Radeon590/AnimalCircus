@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class SingletonObjectPresets : MonoBehaviour
 {
-    [SerializeField] private List<Station> stations;
+    [SerializeField] private List<StationPreset> stations;
 
-    public static List<Station> Stations { get; private set; }
+    public static List<StationPreset> Stations { get; private set; }
 
-    [SerializeField] private List<Employee> employees;
+    [SerializeField] private List<EmployeePreset> employees;
     
-    public static List<Employee> Employees { get; private set; }
+    public static List<EmployeePreset> Employees { get; private set; }
 
     public void SetUp()
     {

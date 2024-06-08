@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UiListElementToEmployeeAdapter : UiListElementDataAdapter<Employee>
+public class UiListElementToEmployeeAdapter : UiListElementDataAdapter<EmployeePreset>
 {
 }
